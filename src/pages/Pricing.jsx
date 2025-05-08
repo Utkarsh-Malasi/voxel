@@ -400,17 +400,29 @@ function Pricing() {
               value={tabValue} 
               onChange={handleTabChange}
               centered
+              orientation={{
+                xs: 'vertical',
+                sm: 'horizontal'
+              }}
+              variant="scrollable"
+              scrollButtons="auto"
               sx={{
                 '& .MuiTabs-indicator': {
                   backgroundColor: 'white',
                   height: '3px',
                   borderRadius: '3px',
                 },
+                '& .MuiTabs-flexContainer': {
+                  flexDirection: { xs: 'column', sm: 'row' },
+                  alignItems: 'center',
+                  gap: { xs: 2, sm: 0 }
+                },
                 '& .MuiTab-root': {
                   color: 'rgba(255, 255, 255, 0.7)',
                   fontSize: '1rem',
                   fontWeight: 500,
-                  mx: 1,
+                  mx: { xs: 0, sm: 1 },
+                  width: { xs: '100%', sm: 'auto' },
                   '&.Mui-selected': {
                     color: 'white',
                     fontWeight: 600,
